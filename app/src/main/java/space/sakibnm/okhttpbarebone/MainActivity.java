@@ -112,12 +112,12 @@ public class MainActivity extends AppCompatActivity {
                 .add(Keys.type, addType)
                 .add(Keys.phone, addPhone)
                 .build();
-        Request request = new Request.Builder()
+        Request requestAdd = new Request.Builder()
                 .url(baseUrlAdd)
                 .post(formBody)
                 .build();
 
-        this.client.newCall(request).enqueue(new Callback() {
+        this.client.newCall(requestAdd).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 Log.d(Tags.TAG, "onFailure: "+e.getMessage());
